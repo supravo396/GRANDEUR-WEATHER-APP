@@ -1,0 +1,127 @@
+body {
+    background: #8C52FF;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex; /* allows to create a flexible space, with a flexible layout and its children become flexible items */
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* visible area of the screen. viewport height -> height: 100vh means the element takes 100% of the viewport height */
+    margin: 0;
+}
+
+#weather-container {
+    background: rgba(255, 255, 255, 0.3); /* 'rgba' -> a is for alpha which basically determines the opacity or the transparency */
+    max-width: 500px; /* This sets the maximum width of the #weather-container element to 500 pixels. The container will not exceed this width even if its content is larger */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* 0 -> horizontal shift is 0. 8px means the vertical shift is downward by 8px. 32px is the blur radius. rgba -> 10% opacity */
+    backdrop-filter: blur(10px); /* This applies a blur effect of 10 pixels to the area behind the element. It creates a frosted glass effect, where the content behind the element appears blurred. */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    overflow-y: auto; /* Enables vertical scrolling if needed */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    height: auto; /* Auto height to accommodate all content */
+}
+
+h2, label, p {
+    color: #fff;
+    margin: 8px 0;
+}
+
+input {
+    width: calc(100% - 30px); /* Increase the width to make the input box longer */
+    padding: 8px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    border-radius: 15px; /* Add rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.5); /* Optional: Add a border to enhance visibility */
+    background: rgb(255, 255, 255); /* Optional: Add a semi-transparent background */
+    color: black; /* Set text color to black for better contrast */
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    margin-bottom: 20px;
+}
+
+button {
+    background: #debff4;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 11px;
+    cursor: pointer; /* Changes the cursor to a pointer (hand icon) when the user hovers over the button. This indicates that the button is clickable. */
+    margin-top: 10px; /* Reduce margin for better spacing */
+    width: 100px;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #8b48d7; /* Change button color on hover */
+}
+
+#temp-div p {
+    font-size: 60px;
+    margin-top: -30px;
+    margin-bottom: 0; /* Ensure no extra spacing */
+}
+
+#weather-info {
+    font-size: 20px;
+    margin-bottom: 10px; /* Add margin for spacing */
+}
+
+#weather-icon {
+    width: 100px; /* Adjust icon size for better fit */
+    height: 100px;
+    margin: 0 auto;
+    display: none; /* Initially hide the weather icon */
+}
+
+#hourly-forecast {
+    margin-top: 20px; /* Reduced top margin */
+    overflow-x: auto; /* Enables horizontal scrolling if the content inside the #hourly-forecast element overflows its container. */
+    white-space: nowrap; /* Prevents the content inside the #hourly-forecast element from wrapping onto the next line. */
+    display: flex; /* Applies Flexbox layout to the #hourly-forecast element. This makes its direct children flexible items, allowing for dynamic arrangement and alignment. */
+    justify-content: space-between;
+    height: auto; /* Ensure flexible height */
+    max-height: 150px; /* Add a maximum height for better layout control */
+}
+
+.hourly-item {
+    flex: 0 0 auto;
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 10px;
+    color: white;
+}
+
+.hourly-item img {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 5px;
+}
+
+#hourly-heading {
+    color: #fff;
+    margin-top: 10px;
+}
+
+#city {
+    color: black;
+    width: calc(100% - 32px); /* Ensure input has consistent width */
+    margin: 8px auto; /* Center input box */
+}
+
+
+
+/* flex: 0 0 auto;:
+
+flex-grow: 0;: Specifies that the flex item will not grow to fill available space.
+flex-shrink: 0;: Specifies that the flex item will not shrink to fit into the container.
+flex-basis: auto;: Specifies that the initial size of the flex item is determined by its width or content size, 
+rather than being automatically calculated by Flexbox. 
+Here, the size is controlled by the specified width of 80px.*/
